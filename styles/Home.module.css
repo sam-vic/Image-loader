@@ -73,6 +73,10 @@
   max-width: 800px;
 }
 
+.animation {
+  display: hidden !important;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -83,13 +87,24 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  background-image: url("/images/backgrounds/mount_everest.jpg");
+  background-position: center;
+  background-size: cover;
+  animation: fadein 2s;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  transition: top ease-in-out 100ms, font-size ease-in-out 100ms, color ease-in-out 100ms;
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
 }
 
 .card h2 {
