@@ -73,10 +73,6 @@
   max-width: 800px;
 }
 
-.animation {
-  display: hidden !important;
-}
-
 .card {
   margin: 1rem;
   padding: 1.5rem;

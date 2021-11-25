@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Header from './components/header'
+import Header from '../components/header'
 
 import styles from '../styles/Home.module.css'
 import clsx from 'clsx'
@@ -7,7 +7,7 @@ import clsx from 'clsx'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Header className='p-[30px]' />
+      <Header className='p-[30px] block relative h-[30px]' />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <div className={styles.animation}>
+            <div className='opacity-0'>
               <h2>Documentation &rarr;</h2>
               <p>Find in-depth information about Next.js features and API.</p>
             </div>
