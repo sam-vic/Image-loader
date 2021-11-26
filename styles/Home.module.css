@@ -68,7 +68,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
 }
 
 .card {
@@ -81,24 +80,25 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-  background-image: url("/images/backgrounds/mount_everest.jpg");
+  position: relative;
+}
+
+.backgroundImage {
   background-position: center;
+  content: "";
+  background-image: url("/images/backgrounds/mount_everest.jpg");
   background-size: cover;
-  animation: fadein 2s;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  transition: top ease-in-out 100ms, font-size ease-in-out 100ms, color ease-in-out 100ms;
-  @keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
+  
 }
 
 .card h2 {
