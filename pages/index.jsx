@@ -90,10 +90,10 @@ function Cards({ url, title, text }) {
   return (
     <a
       href={url}
-      className={styles.card}
+      className={clsx(styles.card,'group')}
     >
-      <div className={styles.backgroundImage}/>
-      <div className='opacity-0 transition-opacity duration-300 ease-in hover:opacity-100 relative'>
+      <div className={clsx(styles.backgroundImage, 'group-hover:opacity-75')}/>
+      <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in group-hover:opacity-100 relative'>
         <h2>{title} &rarr; </h2>
         <p>{text}</p>
       </div>
