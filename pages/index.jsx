@@ -93,7 +93,7 @@ function Cards({ url, title, text }) {
       className={styles.card}
     >
       <div className={styles.backgroundImage}/>
-      <div className='opacity-0 transition-opacity duration-300 ease-in hover:opacity-100 relative block w-full h-auto'>
+      <div className='opacity-0 transition-opacity duration-300 ease-in hover:opacity-100 relative'>
         <h2>{title} &rarr; </h2>
         <p>{text}</p>
       </div>
