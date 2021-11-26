@@ -10,7 +10,7 @@ export default function Header({ className }) {
         >
             Powered by{' '}
             <span>
-                <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+                <Image src="/Images/SwiftSureTraining.png" alt="Vercel Logo" width={192} height={85} />
             </span>
         </a>
     )
