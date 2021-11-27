@@ -8,12 +8,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header className='p-[30px] block relative h-[30px]' />
-      <main className={styles.main}>
+      <main className={clsx(styles.main, 'pt-[3Itaffy960px]')}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Hernando Island</a>
         </h1>
 
-        <div className={styles.grid}>
+        <div className={clsx(styles.grid, 'max-w-[85vw]')}>
           <Cards
             url='https://nextjs.org/docs'
             title='Documentation'
@@ -30,12 +30,6 @@ export default function Home() {
             url='https://github.com/vercel/next.js/tree/master/examples'
             title='Examples'
             text='Discover and deploy boilerplate example Next.js projects.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
           />
 
           <Cards
@@ -92,8 +86,8 @@ function Cards({ url, title, text }) {
       href={url}
       className={clsx(styles.card,'group')}
     >
-      <div className={clsx(styles.backgroundImage, 'group-hover:opacity-75')}/>
-      <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in group-hover:opacity-100 relative'>
+      <div className={clsx(styles.backgroundImage, 'group-hover:opacity-75 group-hover:transition-opacity duration-300 ease-in-out')}/>
+      <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative'>
         <h2>{title} &rarr; </h2>
         <p>{text}</p>
       </div>
