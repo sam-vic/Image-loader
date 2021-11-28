@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header className='p-[30px] block relative h-[30px]' />
-      <main className={clsx(styles.main, 'pt-[3Itaffy960px]')}>
+      <main className={clsx(styles.main, 'pt-[30px]')}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Hernando Island</a>
         </h1>
