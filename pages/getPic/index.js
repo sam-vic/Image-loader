@@ -4,13 +4,13 @@ export const getStaticProps = async () => {
     const data = await res.json();
 
     return {
-        props: { data: data  }
+        props: { data: data }
     }
 }
 
 const Image = ({ data }) => {
-   console.log(data)
-   return null
+    console.log(data)
+    return null
 }
 
 export default Image;
