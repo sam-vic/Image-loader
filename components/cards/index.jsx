@@ -34,7 +34,7 @@ export function Cards({ url, title, text, full, key }) {
             className={clsx(styles.card, 'group relative overflow-hidden ')}
             key={key}
         >
-            <div className='block absolute w-full h-auto group-hover:opacity-40' >
+            <div className='block absolute w-full h-auto group-hover:opacity-40 group-hover:scale-110 transition duration-500 ease-in-out' >
                 <img src={full} width={500} height={500} />
             </div>
 
@@ -42,9 +42,6 @@ export function Cards({ url, title, text, full, key }) {
                 <h2>{title} &rarr; </h2>
                 <p>{text}</p>
             </div>
-
-
-            {/*<div className={clsx(styles.backgroundImage, 'group-hover:opacity-75 group-hover:transition-opacity duration-300 ease-in-out')}/>*/}
         </a>
     )
 }
