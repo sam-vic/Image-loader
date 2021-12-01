@@ -24,7 +24,7 @@ export default function Body() {
                         title='Learn'
                         text='Learn about Next.js in an interactive course with quizzes!'
                         full={full}
-                        key={index}
+                        key={index + 1}
                     />
 
                     <Cards
@@ -32,7 +32,7 @@ export default function Body() {
                         title='Examples'
                         text='Discover and deploy boilerplate example Next.js projects.'
                         full={full}
-                        key={index}
+                        key={index + 2}
                     />
 
                     <Cards
@@ -40,7 +40,7 @@ export default function Body() {
                         title='Deploy'
                         text='Instantly deploy your Next.js site to a public URL with Vercel.'
                         full={full}
-                        key={index}
+                        key={index + 3}
                     />
 
                     <Cards
@@ -48,7 +48,7 @@ export default function Body() {
                         title='Deploy'
                         text='Instantly deploy your Next.js site to a public URL with Vercel.'
                         full={full}
-                        key={index}
+                        key={index + 4}
                     />
 
                     <Cards
@@ -56,7 +56,14 @@ export default function Body() {
                         title='Deploy'
                         text='Instantly deploy your Next.js site to a public URL with Vercel.'
                         full={full}
-                        key={index}
+                        key={index + 5}
+                    /> 
+
+                    <Cards
+                        url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
+                        title='Deploy'
+                        text='Instantly deploy your Next.js site to a public URL with Vercel.'
+                        full={full + 6}
                     />
 
                     <Cards
@@ -64,14 +71,7 @@ export default function Body() {
                         title='Deploy'
                         text='Instantly deploy your Next.js site to a public URL with Vercel.'
                         full={full}
-                    />
-
-                    <Cards
-                        url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-                        title='Deploy'
-                        text='Instantly deploy your Next.js site to a public URL with Vercel.'
-                        full={full}
-                        key={index}
+                        key={index + 7}
                     />
                 </div>
             )}
@@ -79,12 +79,13 @@ export default function Body() {
     )
 }
 
-export function Cards({ url, title, text, full }) {
+export function Cards({ url, title, text, full, key }) {
 
     return (
         <a
             href={url}
             className={clsx(styles.card, 'group')}
+            key={key}
         >
             <div>
                 <img src={full} width={300} height={300} />
