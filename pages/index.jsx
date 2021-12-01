@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/header'
-import Cards from '../components/cards'
+import Body from '../components/cards'
 
 import styles from '../styles/Home.module.css'
 import clsx from 'clsx'
@@ -13,56 +13,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Hernando Island</a>
         </h1>
-
-        <div className={clsx(styles.grid, 'max-w-[85vw]')}>
-          <Cards
-            url='https://nextjs.org/docs'
-            title='Documentation'
-            text='Find in-depth information about Next.js features and API.'
-          />
-
-          <Cards
-            url='https://nextjs.org/learn'
-            title='Learn'
-            text='Learn about Next.js in an interactive course with quizzes!'
-          />
-
-          <Cards
-            url='https://github.com/vercel/next.js/tree/master/examples'
-            title='Examples'
-            text='Discover and deploy boilerplate example Next.js projects.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
-          />
-
-          <Cards
-            url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            title='Deploy'
-            text='Instantly deploy your Next.js site to a public URL with Vercel.'
-          />
-        </div>
+        <Body/>
       </main>
 
       <footer className={styles.footer}>

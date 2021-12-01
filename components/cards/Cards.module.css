@@ -40,3 +40,11 @@
     line-height: 1.5;
   }
   
+
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
