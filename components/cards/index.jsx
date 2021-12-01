@@ -34,7 +34,7 @@ export function Cards({ url, title, text, full, key }) {
             className={clsx(styles.card, 'group relative overflow-hidden ')}
             key={key}
         >
-            <div className='block absolute w-full h-auto' >
+            <div className='block absolute w-full h-auto group-hover:opacity-40' >
                 <img src={full} width={500} height={500} />
             </div>
 
