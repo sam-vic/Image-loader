@@ -10,7 +10,7 @@ export default function Body() {
         <div>
 
             {info.map(({ index, urls: { full } }) =>
-                <div  className={clsx(styles.grid, 'max-w-[85vw]')}>
+                <div className={clsx(styles.grid, 'max-w-[85vw]')}>
                     <Cards
                         url='https://nextjs.org/docs'
                         title='Documentation'
@@ -57,7 +57,7 @@ export default function Body() {
                         text='Instantly deploy your Next.js site to a public URL with Vercel.'
                         full={full}
                         key={index + 5}
-                    /> 
+                    />
 
                     <Cards
                         url='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
@@ -84,16 +84,18 @@ export function Cards({ url, title, text, full, key }) {
     return (
         <a
             href={url}
-            className={clsx(styles.card, 'group')}
+            className={clsx(styles.card, 'group relative overflow-hidden ')}
             key={key}
         >
-            <div>
+            <div className='absolute w-full h-full' >
                 <img src={full} width={300} height={300} />
-                <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative'>
-                    <h2>{title} &rarr; </h2>
-                    <p>{text}</p>
-                </div>
             </div>
+
+            <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative p-5'>
+                <h2>{title} &rarr; </h2>
+                <p>{text}</p>
+            </div>
+
 
             {/*<div className={clsx(styles.backgroundImage, 'group-hover:opacity-75 group-hover:transition-opacity duration-300 ease-in-out')}/>*/}
         </a>
