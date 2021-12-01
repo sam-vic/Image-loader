@@ -11,7 +11,7 @@ export default function Home() {
       <Header className='p-[30px] block relative h-[30px]' />
       <main className={clsx(styles.main, 'pt-[30px]')}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Hernando Island</a>
+          The <a href="https://nextjs.org" className='text-[100px]'>Gallery</a>
         </h1>
         <Body />
       </main>
