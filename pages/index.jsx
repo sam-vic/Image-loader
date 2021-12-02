@@ -4,6 +4,7 @@ import Body from '../components/cards'
 
 import styles from '../styles/Home.module.css'
 import clsx from 'clsx'
+import LoadMore from '../components/buttons/loadMoreButton'
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
       <Header className='p-[30px] block relative h-[30px]' />
       <main className={clsx(styles.main, 'pt-[30px]')}>
         <h1 className={styles.title}>
-          The <a href="https://nextjs.org" className='text-[100px]'>Gallery</a>
+          The <a href="https://nextjs.org" className='text-[100px]'>Peanut Gallery</a>
         </h1>
         <Body />
+        <LoadMore/>
       </main>
 
       <footer className={styles.footer}>

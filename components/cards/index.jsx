@@ -10,14 +10,14 @@ export default function Body() {
     return (
         <div className='flex flex-wrap justify-center'>
 
-            {info.map(({ urls: { regular }}, index) =>
+            {info.map(({ urls: { regular }, user:{ first_name } }, index) =>
                 <div key={`card-${index}`} className='flex '>
                     <Cards
                         url='https://nextjs.org/docs'
                         title='Documentation'
                         text='Find in-depth information about Next.js features and API.'
                         full={regular}
-                        
+                        first_name={first_name}
                     />
 
                 </div>
@@ -26,8 +26,7 @@ export default function Body() {
     )
 }
 
-export function Cards({ url, title, text, full, key }) {
-
+export function Cards({ url, first_name, text, full, key }) {
     return (
         <a
             href={url}
@@ -39,7 +38,7 @@ export function Cards({ url, title, text, full, key }) {
             </div>
 
             <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative p-5'>
-                <h2>{title} &rarr; </h2>
+                <h2>{first_name}'s Pictures &rarr; </h2>
                 <p>{text}</p>
             </div>
         </a>
