@@ -33,8 +33,8 @@ export function Cards({ url, first_name, text, full, key }) {
             className={clsx(styles.card, 'group relative overflow-hidden ')}
             key={key}
         >
-            <div className='block absolute scale-125 w-full h-auto group-hover:opacity-40 group-hover:scale-150 transition duration-500 ease-in-out' >
-                <img src={full} width={500} height={500} />
+            <div className='block absolute w-full h-full group-hover:opacity-40 group-hover:scale-110 transition duration-500 ease-in-out' >
+                <img src={full} width={500} height={500} className='object-cover h-full w-full object-center'/>
             </div>
 
             <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative p-5'>
