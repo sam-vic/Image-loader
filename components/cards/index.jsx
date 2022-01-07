@@ -11,13 +11,13 @@ const isDescToLong = desc => {
 export default function Body({ data }) {
     return (
         <div className='flex flex-wrap justify-center'>
-            {data?.map(({ urls: { regular }, user: { first_name, portfolio_url }, alt_description, description }, index) => {
-                const desc = description || alt_description || 'No Discription Available'
+            {data?.map(({ urls: { regular }, user: { first_name, portfolio_url, instagram_username }, alt_description, description }, index) => {
+                const desc = description || alt_description || 'Click Through To Read More'
 
                 return (
                     <div key={`card-${index}`} className='flex '>
                         <Cards
-                            url={portfolio_url}
+                            url={portfolio_url || `https://www.instagram.com/${instagram_username}`}
                             title='Documentation'
                             text={isDescToLong(desc) ? 'Click Through To Read More' : desc}
                             full={regular}

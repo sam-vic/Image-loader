@@ -29,6 +29,8 @@ export default function Home() {
     [data?.pages]
   )
 
+      console.log(reduced_pics)
+
   return (
     <div className={styles.container}>
       <Header className='p-[30px] block relative h-[30px]' />
