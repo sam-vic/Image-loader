@@ -49,7 +49,7 @@ export function Cards({ url, first_name, text, full, key }) {
 
             <div className='opacity-0 group-hover:transition-opacity duration-300 ease-in-out group-hover:opacity-100 relative p-5'>
                 <h2>{_.startCase(first_name)}'s Pictures &rarr; </h2>
-                <p className='max-w-[250px] h-[100px] line-clamp-3 '>{text}</p>
+                <p className='max-w-[250px] h-[100px] line-clamp-3 '>{_.startCase(text)}</p>
             </div>
         </a>
     )
