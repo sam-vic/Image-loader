@@ -13,7 +13,7 @@ export default function Home() {
     'CARDS',
     async ({ pageParam = 1 }) => ({ pageParam, pics: await (await fetch(`https://api.unsplash.com/photos/?client_id=rL_5c3JZU0epYcJVGrn1HHWpmFd_Uor1zirS2ZfHG9c&per_page=20&page=${pageParam}`)).json() }),
     {
-      getNextPageParam: (lastPage, allPages) => lastPage.pageParam + 1
+      getNextPageParam: (lastPage) => lastPage.pageParam + 1
     }
   )
 
