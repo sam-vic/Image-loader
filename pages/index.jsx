@@ -1,12 +1,34 @@
 import Image from 'next/image'
 import Header from '../components/header'
 import Body from '../components/cards'
+import { useInfiniteQuery } from 'react-query'
 
 import styles from '../styles/Home.module.css'
 import clsx from 'clsx'
 import LoadMore from '../components/buttons/loadMoreButton'
+import { useMemo } from 'react'
 
 export default function Home() {
+  const { data, fetchNextPage } = useInfiniteQuery(
+    'CARDS',
+    async ({ pageParam = 1 }) => ({ pageParam, pics: await (await fetch(`https://api.unsplash.com/photos/?client_id=rL_5c3JZU0epYcJVGrn1HHWpmFd_Uor1zirS2ZfHG9c&per_page=20&page=${pageParam}`)).json() }),
+    {
+      getNextPageParam: (lastPage, allPages) => lastPage.pageParam + 1
+    }
+  )
+
+  const reduced_pics = useMemo(
+    () => data?.pages.reduce(
+      (newValue, { pics }) => {
+        newValue.push(...pics)
+
+        return newValue
+      },
+      [] // new value
+    ),
+    [data?.pages]
+  )
+
   return (
     <div className={styles.container}>
       <Header className='p-[30px] block relative h-[30px]' />
@@ -14,8 +36,8 @@ export default function Home() {
         <h1 className={styles.title}>
           The <a href="https://nextjs.org" className='text-[100px]'>Peanut Gallery</a>
         </h1>
-        <Body />
-        <LoadMore/>
+        <Body data={reduced_pics} />
+        <LoadMore onClick={() => fetchNextPage()} />
       </main>
 
       <footer className={styles.footer}>
@@ -33,3 +55,10 @@ export default function Home() {
     </div>
   )
 }
+
+
+[
+  { pageParam: 1, pics: [] },
+  { pageParam: 1, pics: [] },
+  { pageParam: 1, pics: [] }
+]

@@ -1,6 +1,5 @@
 import styles from './Cards.module.css'
 import clsx from 'clsx'
-import { useQuery } from 'react-query'
 import _ from 'lodash'
 
 const isDescToLong = desc => {
@@ -9,15 +8,12 @@ const isDescToLong = desc => {
     return words.length > 10
 }
 
-export default function Body() {
-    const { data: info = [] } = useQuery('CARDS', async () => await (await fetch('https://api.unsplash.com/photos/?client_id=rL_5c3JZU0epYcJVGrn1HHWpmFd_Uor1zirS2ZfHG9c&per_page=20&page=4')).json())
-
-    console.log(info)
-
+export default function Body({ data }) {
     return (
         <div className='flex flex-wrap justify-center'>
-            {info.map(({ urls: { regular }, user: { first_name, portfolio_url }, alt_description, description }, index) => {
+            {data?.map(({ urls: { regular }, user: { first_name, portfolio_url }, alt_description, description }, index) => {
                 const desc = description || alt_description || 'No Discription Available'
+
                 return (
                     <div key={`card-${index}`} className='flex '>
                         <Cards
